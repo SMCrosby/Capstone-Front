@@ -19,6 +19,13 @@ import { MenuitemComponent } from './menu/menuitem/menuitem.component';
 import { ProductComponent } from './product/product.component';
 import { UserListComponent } from './user/user-list/user-list.component';
 import { UserEditComponent } from './user/user-edit/user-edit.component';
+import { UserDetailComponent } from './user/user-detail/user-detail.component';
+import { UserCreateComponent } from './user/user-create/user-create.component';
+import { ProductCreateComponent } from './product/product-create/product-create.component';
+import { VendorDetailComponent } from './vendor/vendor-detail/vendor-detail.component';
+import { VendorEditComponent } from './vendor/vendor-edit/vendor-edit.component';
+import { VendorCreateComponent } from './vendor/vendor-create/vendor-create.component';
+
 
 @NgModule({
   declarations: [
@@ -35,7 +42,13 @@ import { UserEditComponent } from './user/user-edit/user-edit.component';
     MenuitemComponent,
     ProductComponent,
     UserListComponent,
-    UserEditComponent
+    UserEditComponent,
+    UserDetailComponent,
+    UserCreateComponent,
+    ProductCreateComponent,
+    VendorDetailComponent,
+    VendorEditComponent,
+    VendorCreateComponent,
   ],
   
   imports: [

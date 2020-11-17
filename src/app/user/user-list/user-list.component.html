@@ -1,1 +1,34 @@
-<p>user-list works!</p>
+<div>
+    <h3>User List</h3>
+    <table [ngClass] = "tableStyle">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Username</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>isReviewer</th>
+                <th>isAdmin</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let u of users">
+                <td>{{u.id}}</td>
+                <td>{{u.username}}</td>
+                <td>{{u.firstname}}</td>
+                <td>{{u.lastname}}</td>
+                <td>{{u.phone}}</td>
+                <td>{{u.email}}</td>
+                <td>{{u.isReviewer}}</td>
+                <td>{{u.isAdmin}}</td>
+                <td>
+                    <a routerLink = "/users/edit/{{u.id}}">Edit</a><a routerLink = "/users/details/{{u.id}}">Details</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

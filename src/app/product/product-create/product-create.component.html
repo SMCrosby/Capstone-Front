@@ -1,0 +1,12 @@
+<p>product-create works!</p>
+<table>
+
+<th>Vendor</th>
+    <td>
+        <select [(ngModel)]="product.vendorId">
+            <option *ngFor="let vendor of vendors" value={{vendor.id>{{vendor.name}}</option>}}
+        </select>
+    </td>
+
+
+</table>

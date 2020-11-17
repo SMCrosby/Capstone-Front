@@ -1,6 +1,6 @@
 <div>
-    <h3>User Edit</h3>
-    <a routerLink="/users/list">Return without Saving</a>
+    <h3>User Details</h3>
+    <a routerLink="/users/list">Return to UserList</a>
     <table *ngIf="user" class="table table-sm">
         <tr>
             <th>Id</th>
@@ -56,11 +56,5 @@
                 <input [(ngModel)]="user.isAdmin" type="checkbox" size="15">
             </td>
         </tr>
-        <tr>
-            <td colspan="2">
-                <button (click)="save()" class="btn btn-primary">Save and Return</button>
-            </td>
-        </tr>
     </table>
 </div>
-

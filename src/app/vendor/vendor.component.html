@@ -1,1 +1,32 @@
-<p>vendor works!</p>
+<div>
+    <h3>Vendors</h3>
+    <table class="table table-sm">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Code</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>City/State</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let v of vendors">
+                <td>{{v.id}}</td>
+                <td>{{v.code}}</td>
+                <td>{{v.name}}</td>
+                <td>{{v.address}}</td>
+                <td>{{v.city}} / {{v.state}}</td>
+                <td>{{v.phone}}</td>
+                <td>{{v.email}}</td>
+                <td>
+                    <span><a routerLink = "/vendors/edit/{{v.id}}">Edit</a>
+                     | <a routerLink = "/vendors/details/{{v.id}}">Details</a></span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

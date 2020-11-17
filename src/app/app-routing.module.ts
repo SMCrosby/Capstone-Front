@@ -11,20 +11,34 @@ import { UserComponent } from './user/user.component';
 import { VendorComponent } from './vendor/vendor.component';
 import { ProductComponent } from './product/product.component';
 import { RequestComponent } from './request/request.component';
+import { UserListComponent } from './user/user-list/user-list.component';
+import { UserEditComponent } from './user/user-edit/user-edit.component';
+import { UserDetailComponent } from './user/user-detail/user-detail.component';
+import { VendorEditComponent } from './vendor/vendor-edit/vendor-edit.component';
+import { VendorDetailComponent } from './vendor/vendor-detail/vendor-detail.component';
+import { UserCreateComponent } from './user/user-create/user-create.component';
 
 
 const routes: Routes = [
     { path: "", redirectTo: "/home", pathMatch: "full" },
     { path: "home", component: HomeComponent },
     { path: "about", component: AboutComponent },
-    { path: "user", component: UserComponent },
-    { path: "vendor", component: VendorComponent },
+    
+    { path: "users", component: UserComponent },
+        { path: "users/list", component: UserListComponent },
+        { path: "users/edit/:id", component: UserEditComponent },
+        { path: "users/details/:id", component: UserDetailComponent},
+        { path: "users/create", component: UserCreateComponent },  
+    
+    { path: "vendors", component: VendorComponent },
+        { path: "vendors/edit/:id", component: VendorEditComponent },
+        { path: "vendors/details/:id", component: VendorDetailComponent },
+    
     { path: "products", component: ProductComponent },
-    { path: "request", component: RequestComponent },
+    { path: "requests", component: RequestComponent },
     
     { path: "**", component: E404Component }
 ]
-
 
 
 @NgModule({

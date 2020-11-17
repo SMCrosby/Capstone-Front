@@ -2,7 +2,9 @@ export class Menu {
     display: string = "";
     route: string = "";
 
-    constructor(){
-    }
-    
+    constructor(display,route)
+        {
+            this.display = display;
+            this.route = route;
+    }  
 }
