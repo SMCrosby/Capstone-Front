@@ -1,1 +1,65 @@
-<p>user-create works!</p>
+<div>
+    <h3>User Create</h3>
+    <a routerLink="/users/list">Return to UserList</a>
+    <table class="table table-sm">
+        <tr>
+            <th>Id</th>
+            <td>
+                <input [(ngModel)]="user.id" type="text" size ="10" disabled>
+            </td>
+        </tr>
+        <tr>
+            <th>Username</th>
+            <td>
+                <input [(ngModel)]="user.username" type="text" size="15">
+            </td>
+        </tr>
+        <tr>
+            <th>Password</th>
+            <td>
+                <input [(ngModel)]="user.password" type="text" size="15">
+            </td>
+        </tr>
+        <tr>
+            <th>Firstname</th>
+            <td>
+                <input [(ngModel)]="user.firstname" type="text" size="15">
+            </td>
+        </tr>
+        <tr>
+            <th>Lastname</th>
+            <td>
+                <input [(ngModel)]="user.lastname" type="text" size="15">
+            </td>
+        </tr>
+        <tr>
+            <th>Phone</th>
+            <td>
+                <input [(ngModel)]="user.phone" placeholder="513-555-5555" type="text" size="15">
+            </td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td>
+                <input [(ngModel)]="user.email" placeholder="example@Gmail.com" type="text" size="25">
+            </td>
+        </tr>
+        <tr>
+            <th>IsReviewer</th>
+            <td>
+                <input [(ngModel)]="user.isReviewer" type="checkbox" size="15">
+            </td>
+        </tr>
+        <tr>
+            <th>IsAdmin</th>
+            <td>
+                <input [(ngModel)]="user.isAdmin" type="checkbox" size="15">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button (click)="save()" class="btn btn-primary">Create User and Return</button>
+            </td>
+        </tr>
+    </table>
+</div>

@@ -9,7 +9,6 @@ import { FormsModule } from '@angular/forms';
 import { UserComponent } from './user/user.component';
 import { VendorComponent } from './vendor/vendor.component';
 import { RequestComponent } from './request/request.component';
-import { RequestlineComponent } from './requestline/requestline.component';
 import { CoreComponent } from './core/core.component';
 import { HomeComponent } from './core/home/home.component';
 import { AboutComponent } from './core/about/about.component';
@@ -25,6 +24,20 @@ import { ProductCreateComponent } from './product/product-create/product-create.
 import { VendorDetailComponent } from './vendor/vendor-detail/vendor-detail.component';
 import { VendorEditComponent } from './vendor/vendor-edit/vendor-edit.component';
 import { VendorCreateComponent } from './vendor/vendor-create/vendor-create.component';
+import { BoolPipe } from './core/pipes/bool.pipe';
+import { SortPipe } from './core/pipes/sort.pipe';
+import { UserLoginComponent } from './user/user-login/user-login.component';
+import { RequestCreateComponent } from './request/request-create/request-create.component';
+import { RequestEditComponent } from './request/request-edit/request-edit.component';
+import { RequestDetailComponent } from './request/request-detail/request-detail.component';
+import { RequestApproveComponent } from './request/request-approve/request-approve.component';
+import { RequestLinesComponent } from './request/request-lines/request-lines.component';
+import { RequestReviewComponent } from './request/request-review/request-review.component';
+import { LineItemComponent } from './line-item/line-item.component';
+import { LineItemCreateComponent } from './line-item/line-item-create/line-item-create.component';
+import { LineItemEditComponent } from './line-item/line-item-edit/line-item-edit.component';
+import { ProductEditComponent } from './product/product-edit/product-edit.component';
+import { ProductDetailComponent } from './product/product-detail/product-detail.component';
 
 
 @NgModule({
@@ -33,7 +46,6 @@ import { VendorCreateComponent } from './vendor/vendor-create/vendor-create.comp
     UserComponent,
     VendorComponent,
     RequestComponent,
-    RequestlineComponent,
     CoreComponent,
     HomeComponent,
     AboutComponent,
@@ -49,6 +61,20 @@ import { VendorCreateComponent } from './vendor/vendor-create/vendor-create.comp
     VendorDetailComponent,
     VendorEditComponent,
     VendorCreateComponent,
+    BoolPipe,
+    SortPipe,
+    UserLoginComponent,
+    RequestCreateComponent,
+    RequestEditComponent,
+    RequestDetailComponent,
+    RequestApproveComponent,
+    RequestLinesComponent,
+    RequestReviewComponent,
+    LineItemComponent,
+    LineItemCreateComponent,
+    LineItemEditComponent,
+    ProductEditComponent,
+    ProductDetailComponent,
   ],
   
   imports: [

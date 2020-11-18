@@ -3,10 +3,10 @@
     <table [ngClass] = "tableStyle">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Username</th>
-                <th>Firstname</th>
-                <th>Lastname</th>
+                <th><a (click)="sortBy('id')" class="btn btn-link">Id</a></th>
+                <th><a (click)="sortBy('username')" class="btn btn-link">Username</a></th>
+                <th><a (click)="sortBy('firstname')" class="btn btn-link">Firstname</a></th>
+                <th><a (click)="sortBy('lastname')" class="btn btn-link">Lastname</a></th>
                 <th>Phone</th>
                 <th>Email</th>
                 <th>isReviewer</th>
@@ -15,15 +15,15 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let u of users">
+            <tr *ngFor="let u of users | sort:sortCriteria:ascSequence">
                 <td>{{u.id}}</td>
                 <td>{{u.username}}</td>
                 <td>{{u.firstname}}</td>
                 <td>{{u.lastname}}</td>
                 <td>{{u.phone}}</td>
                 <td>{{u.email}}</td>
-                <td>{{u.isReviewer}}</td>
-                <td>{{u.isAdmin}}</td>
+                <td>{{u.isReviewer | bool}}</td>
+                <td>{{u.isAdmin | bool}}</td>
                 <td>
                     <span><a routerLink = "/users/edit/{{u.id}}">Edit</a> 
                         | <a routerLink = "/users/details/{{u.id}}">Details</a></span>

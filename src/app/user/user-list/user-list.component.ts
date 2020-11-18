@@ -10,10 +10,21 @@ import { UserService } from '../user.service';
 export class UserListComponent implements OnInit {
 
   users: User[] = [];
-  tableStyle: String = "table table-sm";
+  tableStyle: string = "table table-sm";
+  sortCriteria: string = "";
+  ascSequence: boolean = true;
+
+sortBy(column: string): void {
+  if(column == this.sortCriteria) {
+    this.ascSequence = !this.ascSequence;
+    return;
+  }
+  this.sortCriteria = column;
+  this.ascSequence = true;
+}
 
   constructor(
-    private usersvc: UserService
+  private usersvc: UserService
   ) { }
 
   ngOnInit(): void {

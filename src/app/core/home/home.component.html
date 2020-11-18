@@ -1,1 +1,34 @@
-<h1>Home</h1>
+<div>
+    <h1>Welcome!</h1>
+    <h3>Your User Info:</h3>
+    <table class="table table-sm" *ngIf='user'>
+        <tr>
+            <td>Id</td>
+            <td>{{ user.id}}</td>
+        </tr>
+        <tr>
+            <td>User Name</td>
+            <td>{{ user.username }}</td>
+        </tr>
+        <tr>
+            <td>FirstName</td>
+            <td>{{ user.firstname }}</td>
+        </tr>
+        <tr>
+            <td>Last Name</td>
+            <td>{{ user.lastname }}</td>
+        </tr>
+        <tr>
+            <td>Phone</td>
+            <td>{{ user.phone}}</td>
+        </tr>
+        <tr>
+            <td>Admin</td>
+            <td>{{ user.isAdmin ? "Yes" : "No" }}</td>
+        </tr>
+        <tr>
+          <td>From syssvs.isAdmin()</td>
+          <td>{{ syssvc.isAdmin() }}</td>
+      </tr>
+    </table>
+  </div>
