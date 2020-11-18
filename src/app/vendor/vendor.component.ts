@@ -18,7 +18,7 @@ export class VendorComponent implements OnInit {
   ngOnInit(): void {
     this.vendorsvc.list().subscribe(
       res => {
-        console.log(res)
+        console.debug(res)
         this.vendors = res as Vendor[];
       },
       err => {

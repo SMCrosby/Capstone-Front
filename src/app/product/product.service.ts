@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Product } from './product.class';
 
 
-const baseurl: string = "http://localhost:53016/api/product";
+const baseurl: string = "http://localhost:53016/api/products";
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +15,7 @@ export class ProductService {
 
   constructor(
     private http: HttpClient
+
   ) { }
 
   list(): Observable<Product[]> {
@@ -30,7 +31,7 @@ export class ProductService {
   }
 
   change(product: Product): Observable<any> {
-    return this.http.post(`${baseurl}/${product.id}` ,Product) as Observable<any>
+    return this.http.put(`${baseurl}/${product.id}` ,Product) as Observable<any>
   }
 
   remove(product: Product): Observable<Product> {

@@ -1,1 +1,30 @@
-<p>product works!</p>
+<div>
+    <h3>Products</h3>
+    <table class="table table-sm">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>PartNumber</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Unit(s)</th>
+                <th>Photo</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let p of products">
+                <td>{{p.id}}</td>
+                <td>{{p.partNbr}}</td>
+                <td>{{p.name}}</td>
+                <td>{{p.price}}</td>
+                <td>{{p.unit}}</td>
+                <td>{{p.photoPath}}</td>
+                <td>
+                    <span><a routerLink="/products/edit/{{p.id}}">Edit</a> 
+                        | <a routerLink="/vendors/details/{{p.id}}">Details</a></span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

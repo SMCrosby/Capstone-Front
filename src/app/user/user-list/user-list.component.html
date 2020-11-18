@@ -25,7 +25,8 @@
                 <td>{{u.isReviewer}}</td>
                 <td>{{u.isAdmin}}</td>
                 <td>
-                    <a routerLink = "/users/edit/{{u.id}}">Edit</a><a routerLink = "/users/details/{{u.id}}">Details</a>
+                    <span><a routerLink = "/users/edit/{{u.id}}">Edit</a> 
+                        | <a routerLink = "/users/details/{{u.id}}">Details</a></span>
                 </td>
             </tr>
         </tbody>
