@@ -3,58 +3,40 @@
     <a routerLink="/users/list">Return to UserList</a>
     <table *ngIf="user" class="table table-sm">
         <tr>
-            <th>Id</th>
-            <td>
-                <input [(ngModel)]="user.id" type="text" size ="10" disabled>
-            </td>
+            <td>Id</td>
+            <td>{{ user.id}}</td>
         </tr>
         <tr>
-            <th>Username</th>
-            <td>
-                <input [(ngModel)]="user.username" type="text" size="15">
-            </td>
+            <td>Username</td>
+            <td>{{ user.username }}</td>
         </tr>
         <tr>
-            <th>Password</th>
-            <td>
-                <input [(ngModel)]="user.password" type="text" size="15">
-            </td>
+            <td>Password</td>
+            <td>{{ user.password | hidden }}</td>
         </tr>
         <tr>
-            <th>Firstname</th>
-            <td>
-                <input [(ngModel)]="user.firstname" type="text" size="15">
-            </td>
+            <td>First Name</td>
+            <td>{{ user.firstname }}</td>
         </tr>
         <tr>
-            <th>Lastname</th>
-            <td>
-                <input [(ngModel)]="user.lastname" type="text" size="15">
-            </td>
+            <td>Last Name</td>
+            <td>{{ user.lastname }}</td>
         </tr>
         <tr>
-            <th>Phone</th>
-            <td>
-                <input [(ngModel)]="user.phone" type="text" size="15">
-            </td>
+            <td>Phone</td>
+            <td>{{ user.phone}}</td>
         </tr>
         <tr>
-            <th>Email</th>
-            <td>
-                <input [(ngModel)]="user.email" type="text" size="25">
-            </td>
+            <td>Email</td>
+            <td>{{user.email}}</td>
         </tr>
         <tr>
-            <th>IsReviewer</th>
-            <td>
-                <input [(ngModel)]="user.isReviewer" type="checkbox" size="15">
-            </td>
+            <td>IsReviewer</td>
+            <td>{{ user.isReviewer | bool }}</td>
         </tr>
         <tr>
-            <th>IsAdmin</th>
-            <td>
-                <input [(ngModel)]="user.isAdmin" type="checkbox" size="15">
-            </td>
+            <td>IsAdmin</td>
+            <td>{{ user.isAdmin | bool }}</td>
         </tr>
     </table>
-</div>
+  </div>        

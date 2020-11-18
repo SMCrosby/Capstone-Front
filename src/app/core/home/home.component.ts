@@ -10,6 +10,7 @@ import { SystemService } from '../system.service';
 export class HomeComponent implements OnInit {
 
   user: User = null;
+  admin = false;
 
   constructor(
   private syssvc: SystemService
@@ -18,6 +19,7 @@ export class HomeComponent implements OnInit {
   //accesses loggin in user
   ngOnInit(): void {
     this.user = this.syssvc.loggedInUser;
+    this.admin = this.syssvc.isAdmin();
   }
 
 }

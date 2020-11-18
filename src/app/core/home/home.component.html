@@ -1,17 +1,21 @@
-<div>
-    <h1>Welcome!</h1>
-    <h3>Your User Info:</h3>
+<div *ngIf='user'>
+    <h1>Welcome {{ user.firstname}}!</h1>
+    <h3>Your Information:</h3>
     <table class="table table-sm" *ngIf='user'>
         <tr>
             <td>Id</td>
             <td>{{ user.id}}</td>
         </tr>
         <tr>
-            <td>User Name</td>
+            <td>Username</td>
             <td>{{ user.username }}</td>
         </tr>
         <tr>
-            <td>FirstName</td>
+            <td>Password</td>
+            <td>{{ user.password | hidden }}</td>
+        </tr>
+        <tr>
+            <td>First Name</td>
             <td>{{ user.firstname }}</td>
         </tr>
         <tr>
@@ -23,12 +27,20 @@
             <td>{{ user.phone}}</td>
         </tr>
         <tr>
-            <td>Admin</td>
-            <td>{{ user.isAdmin ? "Yes" : "No" }}</td>
+            <td>Email</td>
+            <td>{{user.email}}</td>
         </tr>
         <tr>
-          <td>From syssvs.isAdmin()</td>
-          <td>{{ syssvc.isAdmin() }}</td>
+            <td>IsReviewer</td>
+            <td>{{ user.isReviewer | bool }}</td>
+        </tr>
+        <tr>
+            <td>IsAdmin</td>
+            <td>{{ user.isAdmin | bool }}</td>
+        </tr>
+        <tr>
+          <td>Is this person an admin: (From syssvs.isAdmin())</td>
+          <td>{{ syssvc.isAdmin() | bool}}</td>
       </tr>
     </table>
   </div>

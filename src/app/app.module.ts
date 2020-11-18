@@ -38,6 +38,7 @@ import { LineItemCreateComponent } from './line-item/line-item-create/line-item-
 import { LineItemEditComponent } from './line-item/line-item-edit/line-item-edit.component';
 import { ProductEditComponent } from './product/product-edit/product-edit.component';
 import { ProductDetailComponent } from './product/product-detail/product-detail.component';
+import { HiddenPipe } from './core/pipes/hidden.pipe';
 
 
 @NgModule({
@@ -75,6 +76,7 @@ import { ProductDetailComponent } from './product/product-detail/product-detail.
     LineItemEditComponent,
     ProductEditComponent,
     ProductDetailComponent,
+    HiddenPipe,
   ],
   
   imports: [
