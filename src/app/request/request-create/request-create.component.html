@@ -1,1 +1,18 @@
-<p>request-create works!</p>
+<div>
+    <h3>Request Create</h3>
+    <a routerLink="/requests">Return to Requests</a>
+    <table class="table table-sm">
+        <tr>
+            <th>Id</th>
+            <td>
+                <input [(ngModel)]="request.id" type="text" size ="10" disabled>
+            </td>
+        </tr>
+        
+        <tr>
+            <td colspan="2">
+                <button (click)="create()" class="btn btn-primary">Create Request and Return</button>
+            </td>
+        </tr>
+    </table>
+</div>

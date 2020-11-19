@@ -1,12 +1,47 @@
-<p>product-create works!</p>
-<table>
-
-<th>Vendor</th>
-    <td>
-        <select [(ngModel)]="product.vendorId">
-            <option *ngFor="let vendor of vendors" value={{vendor.id>{{vendor.name}}</option>}}
-        </select>
-    </td>
-
-
-</table>
+<div>
+    <h3>Product Create</h3>
+    <a routerLink="/products">Return without Saving</a>
+    <table class="table table-sm">
+        <tr>
+            <th>Id</th>
+            <td>
+                <input [(ngModel)]="product.id" type="text" size="5" disabled>
+            </td>
+        </tr>
+        <tr>
+            <th>Vendor</th>
+            <td>
+                <select [(ngModel)]="product.vendorId">
+                    <option *ngFor="let vendor of vendors" value={{vendor.id}}>{{vendor.name}}</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th>Part Number</th>
+            <td>
+                <input [(ngModel)]="product.partNbr" type="text" size="10">
+            </td>
+        </tr>
+        <tr>
+            <th>Name</th>
+            <td>
+                <input [(ngModel)]="product.name" type="text" size="10">
+            </td>
+        </tr>
+        <tr>
+            <th>Price</th>
+            <td>
+                <input [(ngModel)]="product.unit" type="text" size="10">
+            </td>
+        </tr>
+        <tr>
+            <th>PhotoPath</th>
+            <td>
+                <input [(ngModel)]="product.photoPath" type="text" size="25">
+            </td>
+        </tr>
+        <tr colspan="2">
+            <button (click)="create()" class="btn btn-primary">Create Product and Return</button>
+        </tr>
+    </table>
+</div>

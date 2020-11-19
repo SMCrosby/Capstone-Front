@@ -20,7 +20,7 @@ export class UserCreateComponent implements OnInit {
     private router: Router
   ) { }
 
-  save(): void {
+  create(): void {
     console.log(this.user);
     this.usersvc.create(this.user).subscribe(
       res => {
@@ -28,7 +28,7 @@ export class UserCreateComponent implements OnInit {
         this.router.navigateByUrl("/users/list")
       },
       err => {
-        console.error(err);
+        console.error("Error Creating Product", err);
       });
   }
 
@@ -36,3 +36,15 @@ export class UserCreateComponent implements OnInit {
   }
 
 }
+/*
+create(): void {
+  this.product.vendorId= +this.product.vendorId;
+  this.productsvc.create(this.product).subscribe(
+    res => {console.debug("Product Create:",res); 
+    this.router.navigateByUrl("/products")
+  },
+  err => {
+    console.error("Error Creating Product:",err);
+  });
+}
+*/

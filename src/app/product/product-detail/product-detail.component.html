@@ -1,1 +1,34 @@
-<p>product-detail works!</p>
+<div>
+    <h3>Product Details</h3>
+    <a routerLink="/products">Return to Product List</a>
+    <table *ngIf="product" class="table table-sm">
+        <tr>
+            <td>Id</td>
+            <td>{{ product.id}}</td>
+        </tr>
+        <tr>
+            <td>Vendor</td>
+            <td>{{product.vendor.name}}</td>
+        </tr>
+        <tr>
+            <td>Part Number</td>
+            <td>{{ product.partNbr }}</td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td>{{ product.name }}</td>
+        </tr>
+        <tr>
+            <td>Price</td>
+            <td>{{ product.price }}</td>
+        </tr>
+        <tr>
+            <td>Unit</td>
+            <td>{{ product.unit }}</td>
+        </tr>
+        <tr>
+            <td>PhotoPath</td>
+            <td>{{ product.photoPath}}</td>
+        </tr>
+    </table>
+  </div>    

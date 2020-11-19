@@ -1,1 +1,38 @@
-<p>vendor-detail works!</p>
+<div>
+    <h3>Vendor Details</h3>
+    <a routerLink="/vendors">Return to Vendors List</a>
+    <table *ngIf="vendor" class="table table-sm">
+        <tr>
+            <td>Id</td>
+            <td>{{ vendor.id}}</td>
+        </tr>
+        <tr>
+            <td>Code</td>
+            <td>{{ vendor.code }}</td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td>{{ vendor.name }}</td>
+        </tr>
+        <tr>
+            <td>Address</td>
+            <td>{{ vendor.address }}</td>
+        </tr>
+        <tr>
+            <td>City</td>
+            <td>{{ vendor.city }}</td>
+        </tr>
+        <tr>
+            <td>State</td>
+            <td>{{ vendor.state}}</td>
+        </tr>
+        <tr>
+            <td>Phone</td>
+            <td>{{vendor.phone}}</td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td>{{vendor.email}}</td>
+        </tr>
+    </table>
+  </div>    

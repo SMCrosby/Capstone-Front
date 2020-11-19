@@ -18,6 +18,11 @@ import { VendorEditComponent } from './vendor/vendor-edit/vendor-edit.component'
 import { VendorDetailComponent } from './vendor/vendor-detail/vendor-detail.component';
 import { UserCreateComponent } from './user/user-create/user-create.component';
 import { UserLoginComponent } from './user/user-login/user-login.component';
+import { ProductEditComponent } from './product/product-edit/product-edit.component';
+import { ProductDetailComponent } from './product/product-detail/product-detail.component';
+import { VendorCreateComponent } from './vendor/vendor-create/vendor-create.component';
+import { ProductCreateComponent } from './product/product-create/product-create.component';
+import { RequestEditComponent } from './request/request-edit/request-edit.component';
 
 
 const routes: Routes = [
@@ -35,9 +40,15 @@ const routes: Routes = [
   { path: "vendors", component: VendorComponent },
   { path: "vendors/edit/:id", component: VendorEditComponent },
   { path: "vendors/details/:id", component: VendorDetailComponent },
+  { path: "vendors/create", component: VendorCreateComponent },
 
   { path: "products", component: ProductComponent },
+  { path: "products/edit/:id", component: ProductEditComponent },
+  { path: "products/details/:id", component: ProductDetailComponent },
+  { path: "products/create", component: ProductCreateComponent },
+
   { path: "requests", component: RequestComponent },
+  { path: "requests/edit/:id", component: RequestEditComponent },
 
   { path: "**", component: E404Component }
 ]
