@@ -39,6 +39,7 @@ import { LineItemEditComponent } from './line-item/line-item-edit/line-item-edit
 import { ProductEditComponent } from './product/product-edit/product-edit.component';
 import { ProductDetailComponent } from './product/product-detail/product-detail.component';
 import { HiddenPipe } from './core/pipes/hidden.pipe';
+import { RequestlinesComponent } from './requestline/requestlines.component';
 
 
 @NgModule({
@@ -77,6 +78,7 @@ import { HiddenPipe } from './core/pipes/hidden.pipe';
     ProductEditComponent,
     ProductDetailComponent,
     HiddenPipe,
+    RequestlinesComponent,
   ],
   
   imports: [

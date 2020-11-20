@@ -23,6 +23,7 @@ import { ProductDetailComponent } from './product/product-detail/product-detail.
 import { VendorCreateComponent } from './vendor/vendor-create/vendor-create.component';
 import { ProductCreateComponent } from './product/product-create/product-create.component';
 import { RequestEditComponent } from './request/request-edit/request-edit.component';
+import { RequestLinesComponent } from './request/request-lines/request-lines.component';
 
 
 const routes: Routes = [
@@ -49,6 +50,7 @@ const routes: Routes = [
 
   { path: "requests", component: RequestComponent },
   { path: "requests/edit/:id", component: RequestEditComponent },
+  { path: "request/lines/:id", component: RequestLinesComponent },
 
   { path: "**", component: E404Component }
 ]
