@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Requestline } from 'src/app/requestline/requestline.class';
 import { RequestlineService } from 'src/app/requestline/requestline.service';
 import { Request } from '../request.class';
 import { RequestService } from '../request.service';
+
 
 @Component({
   selector: 'app-request-lines',
@@ -12,13 +13,14 @@ import { RequestService } from '../request.service';
 })
 export class RequestLinesComponent implements OnInit {
   
-requestline: Requestline;
-request: Request;
+  request: Request;
+  requestline: Requestline;
 
   constructor(
     private requestlinesvc: RequestlineService,
     private requestsvc: RequestService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) { }
 
   delete(id: number): void {
@@ -37,15 +39,21 @@ request: Request;
   }
 
   refresh(): void {
-    let id = this.route.snapshot.params.id;
+    let id = +this.route.snapshot.params.id;
     this.requestsvc.get(id).subscribe(
       res => { 
-        this.createUserName(res); console.debug(res); this.request = res; 
+        this.createUserName(res); 
+        console.debug(res); 
+        this.request = res;
+        this.requestline = this.request.requestline as Requestline; 
       },
       err => {
         console.error("Error Refreshing Page:", err);
       });
   }
+
+  
+  
 
   ngOnInit(): void {
     this.refresh();

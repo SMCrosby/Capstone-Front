@@ -42,7 +42,7 @@ export class UserLoginComponent implements OnInit {
         else { this.message = "Invalid Login"}
       },
       err => {console.error("Error:", err);
-      this.message = "Invalid Login";
+      this.message = "Problems Logging in";
     });
   }
 

@@ -1,1 +1,65 @@
-<p>vendor-create works!</p>
+<div>
+    <h3>Vendor Create</h3>
+    <a routerLink="/vendors">Return to Vendors</a>
+    <table class="table table-sm">
+        <tr>
+            <th>Id</th>
+            <td>
+                <input [(ngModel)]="vendor.id" type="text" size ="10" disabled>
+            </td>
+        </tr>
+        <tr>
+            <th>Vendor Name</th>
+            <td>
+                <input [(ngModel)]="vendor.name" type="text" size="15">
+            </td>
+        </tr>
+        <tr>
+            <th>Vendor Code</th>
+            <td>
+                <input [(ngModel)]="vendor.code" type="text" size="15">
+            </td>
+        </tr>
+        <tr>
+            <th>Address</th>
+            <td>
+                <input [(ngModel)]="vendor.address" type="text" size="15">
+            </td>
+        </tr>
+        <tr>
+            <th>City</th>
+            <td>
+                <input [(ngModel)]="vendor.city" type="text" size="15">
+            </td>
+        </tr>
+        <tr>
+            <th>State</th>
+            <td>
+                <input [(ngModel)]="vendor.state" type="text" size="10">
+            </td>
+        </tr>
+        <tr>
+            <th>Zip</th>
+            <td>
+                <input [(ngModel)]="vendor.zip" type="text" size="10">
+            </td>
+        </tr>
+        <tr>
+            <th>Phone</th>
+            <td>
+                <input [(ngModel)]="vendor.phone" placeholder="513-555-5555" type="text" size="15">
+            </td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td>
+                <input [(ngModel)]="vendor.email" placeholder="example@Gmail.com" type="text" size="25">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button (click)="create()" class="btn btn-primary">Create Vendor and Return</button>
+            </td>
+        </tr>
+    </table>
+</div>

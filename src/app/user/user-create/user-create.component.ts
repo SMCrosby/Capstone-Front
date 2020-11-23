@@ -12,8 +12,8 @@ import { ActivatedRoute, ActivationEnd, Router} from '@angular/router';
 
 export class UserCreateComponent implements OnInit {
 
-  user: User;
-
+  user: User = new User();
+  
   constructor(
     private usersvc: UserService,
     private route: ActivatedRoute,
@@ -31,6 +31,7 @@ export class UserCreateComponent implements OnInit {
         console.error("Error Creating Product", err);
       });
   }
+
 
   ngOnInit(): void {
   }

@@ -1,1 +1,53 @@
-<p>request-lines works!</p>
+<div>
+    <h3>Request</h3>
+    <table class="table table-sm">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Username</th>
+                <th>Description</th>
+                <th>DeliveryMode</th>
+                <th>Status</th>
+                <th>Total</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{request.id}}</td>
+                <td>{{request.user.username}}</td>
+                <td>{{request.description}}</td>
+                <td>{{request.deliveryMode}}</td>
+                <td>{{request.status}}</td>
+                <td>{{request.total}}</td>
+                <td>
+                    <!-- <span><a routerLink="/requests/edit/{{request.id}}">Edit</a> 
+                        | <a routerLink="/requests/details/{{request.id}}">Details</a> 
+                        | <a routerLink="/requests/lines/{{request.id}}">Lines</a></span> -->
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div>
+    <span><h3>RequestLines</h3> <a routerLink="/requestlines/create">Create New RequestLine</a></span>
+    <table  class="table table-sm">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Username</th>
+                <th>Description</th>
+                <th>DeliveryMode</th>
+                <th>Status</th>
+                <th>Total</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{requestline.id}}</td>
+                <td>{{request.requestline.quantity}}</td>
+            </tr>
+        </tbody>
+     </table>
+</div>

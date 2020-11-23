@@ -13,7 +13,7 @@ import { User } from 'src/app/user/user.class';
 export class RequestReviewComponent implements OnInit {
 
   requests: Request[];
-  user: User = null;
+  
   admin = false;
 
   constructor(
@@ -24,10 +24,8 @@ export class RequestReviewComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    // this.user = this.syssvc.loggedInUser;
-    // this.admin = this.syssvc.isAdmin();
-    //this.syssvc.checkLogin();
-    let userId = 3//this.syssvc.loggedInUser.id;
+    this.syssvc.checkLogin();
+    let userId = this.syssvc.loggedInUser.id;
     this.requestsvc.InReview(userId).subscribe(
       res => {
         console.debug(res)

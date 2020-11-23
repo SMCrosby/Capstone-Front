@@ -10,7 +10,7 @@ import { Request } from '../request.class'
 })
 export class RequestCreateComponent implements OnInit {
 
-  request: Request;
+  request: Request = new Request();
 
   constructor(
     private requestsvc: RequestService,

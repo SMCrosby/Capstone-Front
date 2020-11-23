@@ -1,3 +1,4 @@
+import { Requestline } from '../requestline/requestline.class';
 import { User } from '../user/user.class';
 
 export class Request {
@@ -13,7 +14,8 @@ export class Request {
     user: User = null;
 
     userName: string = "";
-
+    
+    requestline: Requestline = null;
 
     constructor (){}
 }

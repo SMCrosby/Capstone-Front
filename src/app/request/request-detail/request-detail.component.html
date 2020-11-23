@@ -1,1 +1,39 @@
-<p>request-detail works!</p>
+<div>
+    <h3>Request Details</h3>
+    <a routerLink="/rs/list">Return to Requests</a>
+    <table *ngIf="request"  class="table table-sm">
+        <tr>
+            <td>Id</td>
+            <td>{{ request.id }}</td>
+        </tr>
+        <tr>
+            <td>Status</td>
+            <td>{{ request.status }}</td>
+        </tr>
+        <tr>
+            <td>Total</td>
+            <td>{{ request.total | currency }}</td>
+        </tr>
+        <tr>
+            <td>Username</td>
+            <td>{{ request.user.username }}</td>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td>{{ request.description }}</td>
+        </tr>
+        <tr>
+            <td>Justification</td>
+            <td>{{ request.justification }}</td>
+        </tr>
+        <tr>
+            <td>Reason if Rejection</td>
+            <td>{{ request.rejectionReason }}</td>
+        </tr>
+        <tr>
+            <td>Delivery Method</td>
+            <td>{{ request.deliveryMode }}</td>
+        </tr>
+        
+    </table>
+  </div>        

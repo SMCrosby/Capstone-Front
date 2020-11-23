@@ -31,7 +31,6 @@ import { RequestCreateComponent } from './request/request-create/request-create.
 import { RequestEditComponent } from './request/request-edit/request-edit.component';
 import { RequestDetailComponent } from './request/request-detail/request-detail.component';
 import { RequestApproveComponent } from './request/request-approve/request-approve.component';
-import { RequestLinesComponent } from './request/request-lines/request-lines.component';
 import { RequestReviewComponent } from './request/request-review/request-review.component';
 import { LineItemComponent } from './line-item/line-item.component';
 import { LineItemCreateComponent } from './line-item/line-item-create/line-item-create.component';
@@ -40,6 +39,7 @@ import { ProductEditComponent } from './product/product-edit/product-edit.compon
 import { ProductDetailComponent } from './product/product-detail/product-detail.component';
 import { HiddenPipe } from './core/pipes/hidden.pipe';
 import { RequestlinesComponent } from './requestline/requestlines.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -70,7 +70,6 @@ import { RequestlinesComponent } from './requestline/requestlines.component';
     RequestEditComponent,
     RequestDetailComponent,
     RequestApproveComponent,
-    RequestLinesComponent,
     RequestReviewComponent,
     LineItemComponent,
     LineItemCreateComponent,
@@ -85,7 +84,8 @@ import { RequestlinesComponent } from './requestline/requestlines.component';
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
