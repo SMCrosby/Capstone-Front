@@ -21,6 +21,11 @@ export class RequestlineService {
     return this.http.get(`${baseurl}`) as Observable<Requestline[]>; 
   }
 
+  getByReq(requestId): Observable<Requestline[]> {
+    return this.http.get(`${baseurl}/Request/${requestId}`) as Observable<Requestline[]>;
+  }
+  //[HttpGet("RequestLines/{requestId}")]   
+
   get(id): Observable<Requestline> {
     return this.http.get(`${baseurl}/${id}`) as Observable<Requestline>;
   }

@@ -13,7 +13,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
+            <tr *ngIf="request">
                 <td>{{request.id}}</td>
                 <td>{{request.user.username}}</td>
                 <td>{{request.description}}</td>
@@ -21,9 +21,8 @@
                 <td>{{request.status}}</td>
                 <td>{{request.total}}</td>
                 <td>
-                    <!-- <span><a routerLink="/requests/edit/{{request.id}}">Edit</a> 
-                        | <a routerLink="/requests/details/{{request.id}}">Details</a> 
-                        | <a routerLink="/requests/lines/{{request.id}}">Lines</a></span> -->
+                    <span><a routerLink="/requests/edit/{{request.id}}">Edit</a> 
+                        | <a routerLink="/requests/details/{{request.id}}">Details</a></span>
                 </td>
             </tr>
         </tbody>
@@ -35,18 +34,13 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Username</th>
-                <th>Description</th>
-                <th>DeliveryMode</th>
-                <th>Status</th>
-                <th>Total</th>
-                <th>Actions</th>
+                <th>Quantity</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>{{requestline.id}}</td>
-                <td>{{request.requestline.quantity}}</td>
+            <tr *ngFor="let r of requestlines">
+                <td>{{r.id}}</td>
+                <td>{{r.quantity}}</td>
             </tr>
         </tbody>
      </table>

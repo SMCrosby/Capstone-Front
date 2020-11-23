@@ -14,7 +14,7 @@ import { RequestService } from '../request.service';
 export class RequestLinesComponent implements OnInit {
   
   request: Request;
-  requestline: Requestline;
+  requestlines: Requestline[];
 
   constructor(
     private requestlinesvc: RequestlineService,
@@ -45,18 +45,31 @@ export class RequestLinesComponent implements OnInit {
         this.createUserName(res); 
         console.debug(res); 
         this.request = res;
-        this.requestline = this.request.requestline as Requestline; 
+        //this.requestlines = this.request.requestline as Requestline[]; 
       },
       err => {
         console.error("Error Refreshing Page:", err);
       });
   }
 
+  getByReq(): void {
+    let requestId = +this.route.snapshot.params.id;
+    this.requestlinesvc.getByReq(requestId).subscribe(
+      res => { 
+        console.debug(res); 
+        this.requestlines = res as Requestline[];
+      },
+      err => {
+        console.error("Error Getting RequestLines:", err);
+      });
+
+  }
   
   
 
   ngOnInit(): void {
     this.refresh();
+    this.getByReq();
   }
 
 }
