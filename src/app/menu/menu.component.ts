@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { SystemService } from '../core/system.service';
+import { User } from '../user/user.class';
 import { Menu } from './menu.class';
 
 @Component({
@@ -9,9 +11,17 @@ import { Menu } from './menu.class';
 })
 export class MenuComponent implements OnInit {
 
+  constructor(
+    private syssvc: SystemService
+  ) { }
+
+  user: User; 
+
+  loggedInUser: User = this.syssvc.loggedInUser;
+
   menus: Menu[] = [
-    {display: "Home", route: "/home"},
-    {display: "Users", route: "/users/list"},
+    {display: "Home", route: "home"},
+    {display: "Users", route: "users/list"},
     {display: "Vendors", route: "/vendors"},
     {display: "Products", route: "/products"},
     {display: "Requests", route: "/requests"},
@@ -47,9 +57,10 @@ public mySentences:type[] = [
 </nav>
 */
 
-  constructor() { }
+ 
 
   ngOnInit(): void {
+    
   }
-
+  
 }

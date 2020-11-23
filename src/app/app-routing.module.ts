@@ -24,6 +24,7 @@ import { VendorCreateComponent } from './vendor/vendor-create/vendor-create.comp
 import { ProductCreateComponent } from './product/product-create/product-create.component';
 import { RequestEditComponent } from './request/request-edit/request-edit.component';
 import { RequestLinesComponent } from './request/request-lines/request-lines.component';
+import { RequestReviewComponent } from './request/request-review/request-review.component';
 
 
 const routes: Routes = [
@@ -50,10 +51,13 @@ const routes: Routes = [
 
   { path: "requests", component: RequestComponent },
   { path: "requests/edit/:id", component: RequestEditComponent },
-  { path: "request/lines/:id", component: RequestLinesComponent },
+  { path: "requests/lines/:id", component: RequestLinesComponent },
+  { path: "requests/review", component: RequestReviewComponent },
+
+  
 
   { path: "**", component: E404Component }
-]
+];
 
 
 @NgModule({

@@ -21,12 +21,13 @@ export class SystemService {
       return (this.loggedInUser == null) ? false: this.loggedInUser.isAdmin;
     }
 
-  checkLogin(): void {
-    //if user is not logged in, send to the login page
+    checkLogin(): void {
+    //if user is not logged in, send to the login page 
     if (this.loggedInUser == null) {
       console.log('User is not logged in... redirecting to login.');
       this.router.navigateByUrl('/users/login');
     }
+   
   }
 
   

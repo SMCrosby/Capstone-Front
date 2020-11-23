@@ -21,9 +21,15 @@ request: Request;
     return this.http.get(`${baseurl}`) as Observable<Request[]>; 
   }
 
+  InReview(userId): Observable<Request[]> {
+    return this.http.get(`${baseurl}/Review/${userId}`) as Observable<Request[]>;
+  }
+  //[HttpGet("InReview/{userId}")] 
+
   get(id): Observable<Request> {
     return this.http.get(`${baseurl}/${id}`) as Observable<Request>;
   }
+
 
   create(request: Request): Observable<Request> {
     return this.http.post(`${baseurl}`, request) as Observable<Request>;

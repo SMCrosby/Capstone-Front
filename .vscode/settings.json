@@ -3,6 +3,8 @@
         "productsvc",
         "requestline",
         "requestlinesvc",
-        "requestsvc"
+        "requestsvc",
+        "systemsvc",
+        "userid"
     ]
 }

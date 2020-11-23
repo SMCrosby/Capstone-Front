@@ -9,7 +9,7 @@ import { SystemService } from '../system.service';
 })
 export class HomeComponent implements OnInit {
 
-  user: User = null;
+  user: User = this.syssvc.loggedInUser;
   admin = false;
 
   constructor(
@@ -23,3 +23,14 @@ export class HomeComponent implements OnInit {
   }
 
 }
+
+// let userId = this.syssvc.loggedInUser.id;
+//     this.requestsvc.listInReview(userId).subscribe(
+//       res => {
+//         console.debug(res)
+//         this.requests = res as Request[];
+//       },
+//       err => {
+//         console.error("Error getting Requests in Review:", err);
+//       });
+//   }
