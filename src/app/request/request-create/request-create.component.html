@@ -5,7 +5,43 @@
         <tr>
             <th>Id</th>
             <td>
-                <input [(ngModel)]="request.id" type="text" size ="10" disabled>
+                <input [(ngModel)]="request.id" placeholder="0" type="text" size ="5" disabled>
+            </td>
+        </tr>
+        <tr>
+            <th>User Id</th>
+            <td>
+                <input [(ngModel)]="request.userId" type="text" value="{{request.userId}}" size ="5" disabled>
+            </td>
+        </tr>
+        <tr>
+            <th>Status</th>
+            <td>
+                <input [(ngModel)]="request.status" value="NEW" type="text" size="15" disabled>
+            </td>
+        </tr>
+        <tr>
+            <th>Total</th>
+            <td>
+                <input [(ngModel)]="request.total" type="number" size="15">
+            </td>
+        </tr>
+        <tr>
+            <th>Description</th>
+            <td>
+                <input [(ngModel)]="request.description" type="text" size="25">
+            </td>
+        </tr>
+        <tr>
+            <th>Justification</th>
+            <td>
+                <input [(ngModel)]="request.justification" type="text" size="25">
+            </td>
+        </tr>
+        <tr>
+            <th>Delivery Method</th>
+            <td>
+                <input [(ngModel)]="request.deliveryMode" type="text" size="25">
             </td>
         </tr>
         
@@ -16,3 +52,4 @@
         </tr>
     </table>
 </div>
+<div>

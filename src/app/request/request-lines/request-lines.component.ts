@@ -15,7 +15,7 @@ export class RequestLinesComponent implements OnInit {
   
   request: Request;
   rejectvar: Boolean = false;
-  rejectionReason: string;
+  //rejectionReason: string;
  // requestlines: Requestline[];
 
   constructor(
@@ -41,7 +41,7 @@ rejectConfirm(): void {
 }
 
 reject(): void {
-  this.requestsvc.reject(this.request.id, this.request, this.rejectionReason).subscribe(
+  this.requestsvc.reject(this.request.id, this.request, this.request.rejectionReason).subscribe(
     res => {
       console.debug("Reject Request:", res);
       this.router.navigateByUrl("/requests/review")

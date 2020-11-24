@@ -8,7 +8,7 @@ export class Requestline {
     requestId: number = 0;
     productId: number = 0;
     quantity: number = 1;
-
+    
     product: Product = null;
     request: Request = null;
 

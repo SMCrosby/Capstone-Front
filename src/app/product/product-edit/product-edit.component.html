@@ -12,7 +12,7 @@
             <th>Vendor</th>
             <td>
                 <select [(ngModel)]="product.vendorId">
-                    <option *ngFor="let vendor of vendor" value={{vendor.id}}>{{vendor.name}}</option>
+                    <option *ngFor="let vendor of vendors" value={{vendor.id}} selected={{product.vendor.id}}>{{vendor.name}}</option>
                 </select>
             </td>
         </tr>

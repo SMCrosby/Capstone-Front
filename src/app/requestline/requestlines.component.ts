@@ -14,6 +14,7 @@ import { RequestlineService } from './requestline.service';
 export class RequestlinesComponent implements OnInit {
 
 request: Request;
+requestlines: Requestline;
 
   constructor(
     private requestsvc: RequestService,

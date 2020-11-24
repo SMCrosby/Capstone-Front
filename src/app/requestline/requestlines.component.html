@@ -23,7 +23,7 @@
                 <td>{{request.status}}</td>
                 <td>{{request.total | currency}}</td>
                 <td>
-                    <span><a routerLink="/requests/edit/{{request.id}}">Edit</a>
+                    <span><a routerLink="/request/edit/{{request.id}}">Edit</a>
                         | <a routerLink="/requests/details/{{request.id}}">Details</a></span>
                 </td>
             </tr>
@@ -53,8 +53,9 @@
                 <td>{{r.product.price | currency}}</td>
                 <td>Subtotal--need to add</td>
                 <td>
-                    <span><a routerLink="/requests/edit/{{r.id}}">Edit</a>
-                        | <a routerLink="/requests/details/{{r.id}}">Delete</a></span>
+                    <span><a routerLink="/requestlines/edit/{{r.id}}">Edit</a>
+                        <!-- | <a routerLink="/requestlines/delete/{{r.id}}">Delete</a> -->
+                    </span>
                 </td>
             </tr>
         </tbody>

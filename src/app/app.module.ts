@@ -41,6 +41,7 @@ import { HiddenPipe } from './core/pipes/hidden.pipe';
 import { RequestlinesComponent } from './requestline/requestlines.component';
 import { RouterModule } from '@angular/router';
 import { RequestLinesComponent } from './request/request-lines/request-lines.component';
+import { RequestlineEditComponent } from './requestline/requestline-edit/requestline-edit.component';
 
 
 @NgModule({
@@ -80,6 +81,7 @@ import { RequestLinesComponent } from './request/request-lines/request-lines.com
     HiddenPipe,
     RequestlinesComponent,
     RequestLinesComponent,
+    RequestlineEditComponent,
   ],
 
   imports: [

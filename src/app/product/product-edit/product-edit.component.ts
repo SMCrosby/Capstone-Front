@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Vendor } from 'src/app/vendor/vendor.class';
+import { VendorService } from 'src/app/vendor/vendor.service';
 import { Product } from '../product.class';
 import { ProductService } from '../product.service';
 
@@ -12,10 +13,11 @@ import { ProductService } from '../product.service';
 export class ProductEditComponent implements OnInit {
 
   product: Product;
-  vendor: Vendor
+  vendors: Vendor[] = [];
 
   constructor(
     private productsvc: ProductService,
+    private vendorsvc: VendorService,
     private route: ActivatedRoute,
     private router: Router
   ) { }
@@ -40,9 +42,18 @@ export class ProductEditComponent implements OnInit {
         this.product = res
       },
       err => {
-        console.error("Product:",err)
-      }
-    )
+        console.error("Product:",err);
+      });
+
+      this.vendorsvc.list().subscribe(
+        res => {
+          console.log(res)
+          this.vendors = res as Vendor[];
+        },
+        err => {
+          console.error("Error Loading Products/Vendors:", err);
+        });
   }
 
 }
+
