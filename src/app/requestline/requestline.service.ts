@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Request } from '../request/request.class';
 import { Requestline } from './requestline.class';
 
 
@@ -17,6 +18,11 @@ export class RequestlineService {
   ) { }
 
   
+  requestTotal(id: number, request: Request): Observable<Request> {
+    return this.http.put(`${baseurl}/RequestTotal/${id}`, request) as Observable<Request>;
+  }
+
+
   list(): Observable<Requestline[]> {
     return this.http.get(`${baseurl}`) as Observable<Requestline[]>; 
   }

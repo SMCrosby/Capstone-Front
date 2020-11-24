@@ -37,14 +37,3 @@ export class RequestReviewComponent implements OnInit {
   }
 
 }
-
-// ngOnInit(): void {
-//   this.requestsvc.list().subscribe(
-//     res => {
-//       console.debug(res)
-//       this.requests = res as Request[];
-//     },
-//     err => {
-//       console.error(err);
-//     });
-

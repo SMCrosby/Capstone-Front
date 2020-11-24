@@ -1,4 +1,6 @@
 import { Product } from '../product/product.class';
+import { Request } from '../request/request.class';
+
 
 
 export class Requestline {

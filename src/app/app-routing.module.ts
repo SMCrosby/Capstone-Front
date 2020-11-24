@@ -27,6 +27,8 @@ import { RequestReviewComponent } from './request/request-review/request-review.
 import { RequestDetailComponent } from './request/request-detail/request-detail.component';
 import { RequestLinesComponent } from './request/request-lines/request-lines.component';
 import { RequestlinesComponent } from './requestline/requestlines.component';
+import { RequestlineEditComponent } from './requestline/requestline-edit/requestline-edit.component';
+import { RequestlineCreateComponent } from './requestline/requestline-create/requestline-create.component';
 
 
 
@@ -58,7 +60,12 @@ const routes: Routes = [
   { path: "requests/details/:id", component: RequestDetailComponent },
   { path: "requests/review", component: RequestReviewComponent },
 
-  { path: "requestlines", component: RequestlinesComponent },
+  { path: "requestlines/:id", component: RequestlinesComponent },
+  { path: "requestlines/edit/:id", component: RequestlineEditComponent },
+  { path: "requestlines/create", component: RequestlineCreateComponent },
+
+
+
 
   { path: "**", component: E404Component }
 ];

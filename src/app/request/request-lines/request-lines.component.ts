@@ -14,7 +14,9 @@ import { RequestService } from '../request.service';
 export class RequestLinesComponent implements OnInit {
   
   request: Request;
-  requestlines: Requestline[];
+  rejectvar: Boolean = false;
+  rejectionReason: string;
+ // requestlines: Requestline[];
 
   constructor(
     private requestlinesvc: RequestlineService,
@@ -22,6 +24,33 @@ export class RequestLinesComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router
   ) { }
+
+approve(): void {
+  this.requestsvc.approve(this.request.id, this.request).subscribe(
+    res => {
+      console.debug("Approve Request:", res);
+      this.router.navigateByUrl("/requests/review")
+    },
+    err => {
+      console.error("Error Approving Request:", err);
+    });
+}
+
+rejectConfirm(): void {
+  this.rejectvar=true;
+}
+
+reject(): void {
+  this.requestsvc.reject(this.request.id, this.request, this.rejectionReason).subscribe(
+    res => {
+      console.debug("Reject Request:", res);
+      this.router.navigateByUrl("/requests/review")
+    },
+    err => {
+      console.error("Error Rejecting Request:", err);
+    });
+}
+
 
   delete(id: number): void {
     console.debug(`Deleting line id: ${id}`);
@@ -51,25 +80,10 @@ export class RequestLinesComponent implements OnInit {
         console.error("Error Refreshing Page:", err);
       });
   }
-
-  getByReq(): void {
-    let requestId = +this.route.snapshot.params.id;
-    this.requestlinesvc.getByReq(requestId).subscribe(
-      res => { 
-        console.debug(res); 
-        this.requestlines = res as Requestline[];
-      },
-      err => {
-        console.error("Error Getting RequestLines:", err);
-      });
-
-  }
-  
   
 
   ngOnInit(): void {
     this.refresh();
-    this.getByReq();
   }
 
 }

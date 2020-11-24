@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Request } from '../request/request.class';
 import { RequestService } from '../request/request.service';
 import { Requestline } from './requestline.class';
 import { RequestlineService } from './requestline.service';
@@ -12,7 +13,7 @@ import { RequestlineService } from './requestline.service';
 })
 export class RequestlinesComponent implements OnInit {
 
-requestlines: Requestline[];
+request: Request;
 
   constructor(
     private requestsvc: RequestService,
@@ -20,17 +21,39 @@ requestlines: Requestline[];
     private route: ActivatedRoute
   ) { }
 
-  ngOnInit(): void {
-    this.requestlinesvc.list().subscribe(
+  delete(id: number): void {
+    console.debug(`Deleting line id: ${id}`);
+    this.requestlinesvc.removeById(id).subscribe(
       res => {
-        console.log(res)
-        this.requestlines = res;
+        this.refresh();
       },
-      err => {
+      err => { 
         console.error(err);
       });
   }
 
-}
+  createUserName(request: Request): void {
+    request.userName = `${request.user.lastname}, ${request.user.firstname}`
+  }
 
+  refresh(): void {
+    let id = +this.route.snapshot.params.id;
+    this.requestsvc.get(id).subscribe(
+      res => { 
+        this.createUserName(res); 
+        console.debug(res); 
+        this.request = res;
+        //this.requestlines = this.request.requestline as Requestline[]; 
+      },
+      err => {
+        console.error("Error Refreshing Page:", err);
+      });
+  }
+  
+
+  ngOnInit(): void {
+    this.refresh();
+  }
+
+}
 

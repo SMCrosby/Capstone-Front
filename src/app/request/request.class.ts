@@ -15,8 +15,9 @@ export class Request {
 
     userName: string = "";
     
-    requestline: Requestline = null;
-    requestlines: Requestline[] = null;
+    requestlineId: number =0;
+    requestLines: Requestline = null;
+    //requestlines: Requestline[] = null;
 
     constructor (){}
 }

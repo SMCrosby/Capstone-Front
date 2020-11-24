@@ -19,11 +19,11 @@
                 <td>{{r.description}}</td>
                 <td>{{r.deliveryMode}}</td>
                 <td>{{r.status}}</td>
-                <td>{{r.total}}</td>
+                <td>{{r.total | currency}}</td>
                 <td>
                     <span><a routerLink="/requests/edit/{{r.id}}">Edit</a> 
                         | <a routerLink="/requests/details/{{r.id}}">Details</a> 
-                        | <a routerLink="/requests/lines/{{r.id}}">Lines</a></span>
+                        | <a routerLink="/requestlines/{{r.id}}">Lines</a></span>
                 </td>
             </tr>
         </tbody>

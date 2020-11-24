@@ -1,20 +1,61 @@
 <div>
-    <span><h3>All RequestLines</h3> <a routerLink="/requests">Back to Requests</a></span>
+    <h3>Request</h3>
     <table class="table table-sm">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>RequestId</th>
-                <th>ProductId</th>
-                <th>Quantity</th>
+                <th>Username</th>
+                <th>Full Name</th>
+                <th>Description</th>
+                <th>DeliveryMode</th>
+                <th>Status</th>
+                <th>Total</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let r of requestlines">
+            <tr *ngIf="request">
+                <td>{{request.id}}</td>
+                <td>{{request.user.username}}</td>
+                <td>{{request.userName}}</td>
+                <td>{{request.description}}</td>
+                <td>{{request.deliveryMode}}</td>
+                <td>{{request.status}}</td>
+                <td>{{request.total | currency}}</td>
+                <td>
+                    <span><a routerLink="/requests/edit/{{request.id}}">Edit</a>
+                        | <a routerLink="/requests/details/{{request.id}}">Details</a></span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div>
+    <span>
+        <h3>RequestLines</h3> <a routerLink="/requestlines/create">Create New RequestLine</a>
+    </span>
+    <table class="table table-sm">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Subtotal</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let r of request.requestLines">
                 <td>{{r.id}}</td>
-                <td>{{r.requestId}}</td>
-                <td>{{r.productId}}</td>
+                <td>{{r.product.name}}</td>
                 <td>{{r.quantity}}</td>
+                <td>{{r.product.price | currency}}</td>
+                <td>Subtotal--need to add</td>
+                <td>
+                    <span><a routerLink="/requests/edit/{{r.id}}">Edit</a>
+                        | <a routerLink="/requests/details/{{r.id}}">Delete</a></span>
+                </td>
             </tr>
         </tbody>
     </table>
