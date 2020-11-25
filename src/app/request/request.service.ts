@@ -43,7 +43,7 @@ export class RequestService {
     return this.http.put(`${baseurl}/Approve/${id}`, request) as Observable<any>;
   }
 
-  reject(id: number, request: Request, rejectionReason: string): Observable<any> {
+  reject(id: number, request: Request): Observable<any> {
     return this.http.put(`${baseurl}/Reject/${id}`, request) as Observable<any>;
   }
 

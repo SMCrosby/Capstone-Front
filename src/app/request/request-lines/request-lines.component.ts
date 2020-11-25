@@ -37,11 +37,12 @@ approve(): void {
 }
 
 rejectConfirm(): void {
-  this.rejectvar=true;
+  this.rejectvar= !this.rejectvar;
 }
 
 reject(): void {
-  this.requestsvc.reject(this.request.id, this.request, this.request.rejectionReason).subscribe(
+  console.log(this.request)
+  this.requestsvc.reject(this.request.id, this.request).subscribe(
     res => {
       console.debug("Reject Request:", res);
       this.router.navigateByUrl("/requests/review")

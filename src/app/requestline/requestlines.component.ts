@@ -25,10 +25,10 @@ subtotal: number = 0;
   ) { }
 
   review(): void {
-    this.requestsvc.review(this.request.id).subscribe(
+    this.requestsvc.review(this.request.id, this.request).subscribe(
       res => {
         console.debug("Review Request Status:", res)
-        this.router.navigateByUrl("/requests")
+        this.refresh();
       },
       err => {
         console.error("Error Review Request Status:", err);
