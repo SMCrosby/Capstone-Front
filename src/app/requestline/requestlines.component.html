@@ -23,16 +23,16 @@
                 <td>{{request.status}}</td>
                 <td>{{request.total | currency}}</td>
                 <td>
-                    <span><a routerLink="/request/edit/{{request.id}}">Edit</a>
-                        | <a routerLink="/requests/details/{{request.id}}">Details</a></span>
+                    <span><a routerLink="/requests/review/{{request.id}}">Review</a></span>
                 </td>
             </tr>
         </tbody>
     </table>
 </div>
 <div>
-    <span>
-        <h3>RequestLines</h3> <a routerLink="/requestlines/create">Create New RequestLine</a>
+    <span *ngIf="request">
+        <h3>RequestLines</h3> 
+        <a routerLink="/requestlines/create/{{request.id}}">Create New RequestLine</a>
     </span>
     <table class="table table-sm">
         <thead>
@@ -45,13 +45,14 @@
                 <th>Actions</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody *ngIf="request">
             <tr *ngFor="let r of request.requestLines">
                 <td>{{r.id}}</td>
                 <td>{{r.product.name}}</td>
                 <td>{{r.quantity}}</td>
                 <td>{{r.product.price | currency}}</td>
-                <td>Subtotal--need to add</td>
+                <td>{{r.quantity * r.product.price | currency}}</td>
+                
                 <td>
                     <span><a routerLink="/requestlines/edit/{{r.id}}">Edit</a>
                         <!-- | <a routerLink="/requestlines/delete/{{r.id}}">Delete</a> -->

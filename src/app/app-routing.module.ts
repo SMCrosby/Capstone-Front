@@ -64,9 +64,9 @@ const routes: Routes = [
 
   { path: "requestlines/:id", component: RequestlinesComponent },
   { path: "requestlines/edit/:id", component: RequestlineEditComponent },
-  { path: "requestlines/create", component: RequestlineCreateComponent },
+  { path: "requestlines/create/:id", component: RequestlineCreateComponent },
 
-
+  
 
 
   { path: "**", component: E404Component }

@@ -12,16 +12,10 @@
             <th>Vendor</th>
             <td>
                 <select [(ngModel)]="product.vendorId">
-                    <option *ngFor="let vendor of vendors" value={{vendor.id}} selected={{product.vendor.id}}>{{vendor.name}}</option>
+                    <option *ngFor="let vendor of vendors" value={{vendor.id}}>{{vendor.name}}</option>
                 </select>
             </td>
         </tr>
-        <!-- <label>Colour</label>
-        <div>
-            <select [(ngModel)]="car.colour"">
-                <option *ngFor="let x of colours" [value]="x.id" [selected]="car.color.id == x.id">{{x.name}}</option>
-            </select>
-        </div> -->
         <tr>
             <th>Part Number</th>
             <td>

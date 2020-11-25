@@ -26,12 +26,26 @@ export class RequestCreateComponent implements OnInit {
       res => {
         console.debug("Create Request:", res);
         this.router.navigateByUrl("/requests")
+        this.request = res;
+       // this.review();
       },
       err => {
         console.error("Error Creating Product:", err);
       });
   }
 
+  // review(): void {
+  //   this.requestsvc.review(this.request.id, this.request).subscribe(
+  //     res => {
+  //       console.debug("Review Request Status:", res)
+  //       this.router.navigateByUrl("/requests")
+  //     },
+  //     err => {
+  //       console.error("Error Review Request Status:", err);
+  //     });
+  // }
+  
+  
 
   ngOnInit(): void {
     this.syssvc.checkLogin()

@@ -30,7 +30,7 @@ export class VendorService {
   }
 
   change(vendor: Vendor): Observable<any> {
-    return this.http.put(`${baseurl}/${vendor.id}` ,vendor) as Observable<any>
+    return this.http.put(`${baseurl}/${vendor.id}`,vendor) as Observable<any>
   }
 
   remove(vendor: Vendor): Observable<Vendor> {

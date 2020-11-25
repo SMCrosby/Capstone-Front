@@ -47,6 +47,12 @@ export class RequestService {
     return this.http.put(`${baseurl}/Reject/${id}`, request) as Observable<any>;
   }
 
+  review(id: number, request: Request): Observable<any> {
+    return this.http.put(`${baseurl}/Review/${id}`, request) as Observable<any>;
+  }
+  //[HttpPut("Review/{id}")]     
+
+
   remove(request: Request): Observable<Request> {
     return this.http.delete(`${baseurl}/${request.id}`) as Observable<Request>;
   }

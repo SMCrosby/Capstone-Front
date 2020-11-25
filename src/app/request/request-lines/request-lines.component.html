@@ -45,7 +45,7 @@
                 <td>{{r.product.name}}</td>
                 <td>{{r.quantity}}</td>
                 <td>{{r.product.price | currency}}</td>
-                <td>Subtotal--need to add</td>
+                <td>{{r.quantity * r.product.price | currency}}</td>
             </tr>
             <tr>
                 <td colspan="2">

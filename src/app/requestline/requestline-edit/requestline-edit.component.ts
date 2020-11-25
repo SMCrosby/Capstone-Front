@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from 'src/app/product/product.class';
 import { ProductService } from 'src/app/product/product.service';
+import { Request } from 'src/app/request/request.class';
+import { RequestService } from 'src/app/request/request.service';
 import { Requestline } from '../requestline.class';
 import { RequestlineService } from '../requestline.service';
 
@@ -14,10 +16,13 @@ export class RequestlineEditComponent implements OnInit {
 
   requestline: Requestline;
   products: Product[];
+  subtotal: number = 0;
+  request: Request;
 
   constructor(
     private requestlinesvc: RequestlineService,
     private productsvc: ProductService,
+    private requestsvc: RequestService,
     private route: ActivatedRoute,
     private router: Router
   ) { }
@@ -47,12 +52,21 @@ export class RequestlineEditComponent implements OnInit {
 
       this.productsvc.list().subscribe(
         res => {
-          console.log(res)
+          console.log("Requestlines/Products:",res)
           this.products = res as Product[];
         },
         err => {
           console.error("Error Loading Requestlines/Products:", err);
         });
+
+        this.requestsvc.get(id).subscribe(
+          res => {
+            console.debug("Requestlines-Edit/Fetch Request:", res)
+            this.request = res;
+          },
+          err => {
+            console.error("Error Requestline-Edit/Fetch Request:", err);
+          });
   }
 
 }

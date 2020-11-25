@@ -23,6 +23,7 @@ vendor: Vendor = new Vendor();
     this.vendorsvc.create(this.vendor).subscribe(
       res => {
         console.debug("Vendor Create:", res)
+        this.vendor = res;
         this.router.navigateByUrl("/vendors")
       },
       err => {

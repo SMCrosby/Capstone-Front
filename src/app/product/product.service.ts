@@ -31,7 +31,7 @@ export class ProductService {
   }
 
   change(product: Product): Observable<any> {
-    return this.http.put(`${baseurl}/${product.id}` ,Product) as Observable<any>
+    return this.http.put(`${baseurl}/${product.id}`, product) as Observable<any>
   }
 
   remove(product: Product): Observable<Product> {

@@ -5,7 +5,7 @@ import { Request } from '../request/request.class';
 import { Requestline } from './requestline.class';
 
 
-const baseurl: string = "http://localhost:53016/api/requestlines";
+const baseurl: string = "http://localhost:53016/api/requestLines";
 
 @Injectable({
   providedIn: 'root'
